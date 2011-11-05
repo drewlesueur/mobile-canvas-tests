@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Jasmine Spec Runner</title>
+  <meta name = "viewport" content = "width = device-width" />
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-1.1.0.rc1/jasmine_favicon.png">
+
+  <link rel="stylesheet" type="text/css" href="jasmine.css">
+  <script type="text/javascript" src="jasmine.js"></script>
+  <script type="text/javascript" src="jasmine-html.js"></script>
+
+  <script type="text/javascript" src="../module.js"></script>
+  <!--<script type="text/javascript" src="../severus2.js"></script>
+  <script type="text/javascript" src="../underscore.js"></script>
+  <script type="text/javascript" src="../nimble.js"></script>-->
+  <script type="text/javascript" src="../jquery.js"></script>
+  <script type="text/javascript" src="../underscore.js"></script>
+  <script type="text/javascript" src="../backbone.js"></script>
+  <script type="text/javascript" src="../presenter.js"></script>
+
+  <script>
+    //define("underscore", function() {return _});
+    //define("jquery", function() {return $});
+    //define("nimble", function() {return _});
+  </script>
+  <!--<script type="text/javascript" src="../drews-mixins.js"></script>-->
+
+  <!-- include source files here... -->
+  <script type="text/javascript" src="../canvas_test_view.js"></script>
+  <script type="text/javascript" src="../canvas_tests.js"></script>
+  <script type="text/javascript" src="../canvas_test_presenter.js"></script>
+
+  <!-- include spec files here... -->
+  <script type="text/javascript" src="view_test.js"></script>
+  <script type="text/javascript" src="presenter_test.js"></script>
+
+
+  <script type="text/javascript">
+    var start;
+    var _$
+    (function() {
+      var jasmineEnv = jasmine.getEnv();
+      jasmineEnv.updateInterval = 1000;
+
+      var trivialReporter = new jasmine.TrivialReporter();
+
+      jasmineEnv.addReporter(trivialReporter);
+
+      jasmineEnv.specFilter = function(spec) {
+        return trivialReporter.specFilter(spec);
+      };
+
+      var currentWindowOnload = window.onload;
+
+      start = function () {
+        execJasmine();
+      }
+      
+      window.onload2 = function() {
+          if (currentWindowOnload) {
+            currentWindowOnload();
+          }
+          execJasmine();
+      };
+
+      function execJasmine() {
+        jasmineEnv.execute();
+      }
+
+    })();
+  </script>
+</head>
+
+<body>
+  <iframe onload="start()" style="position:
+    absolute; left: 0; top: 0;"id="htmlFixture" src="../"></iframe>
+</body>
+</html>

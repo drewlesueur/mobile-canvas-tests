@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+  <meta name = "viewport" content = "width = device-width" />
+  <script type="text/javascript" src="module.js"></script>
+  <!--<script type="text/javascript" src="severus2.js"></script>
+  <script type="text/javascript" src="underscore.js"></script>
+  <script type="text/javascript" src="nimble.js"></script>-->
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="underscore.js"></script>
+  <script type="text/javascript" src="backbone.js"></script>
+  <script type="text/javascript" src="presenter.js"></script>
+  <script type="text/javascript" src="canvas_test_view.js"></script>
+  <script type="text/javascript" src="canvas_tests.js"></script>
+  <script type="text/javascript" src="canvas_test_presenter.js"></script>
+  <script>
+    $(function () {
+      CanvasTestPresenter = require("canvas-test-presenter")
+      tests = require("canvas-tests")
+      var app = new CanvasTestPresenter();
+      app.populateTests(tests);
+    })
+  </script>
+</head>
+<body>
+hello world
+<a href="/test/">See tests for this app</a>
+<br>
+<canvas id="canvas" width="320" height="320"></canvas>
+<div id="tests">
+
+</div>
+</body>
+</html>
+
+
+
