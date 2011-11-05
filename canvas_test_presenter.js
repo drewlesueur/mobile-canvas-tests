@@ -41,6 +41,10 @@
         return this.view.updateResults(this.currentTest, fps);
       };
       CanvasTestPresenter.prototype.populateTests = function(tests) {
+        _.each(tests, function(test, index) {
+          var _base;
+          return (_base = tests[index]).name || (_base.name = test.description.replace(/\s/g, "_"));
+        });
         return this.view.populateTests(tests);
       };
       CanvasTestPresenter.prototype.applyBindings = function() {

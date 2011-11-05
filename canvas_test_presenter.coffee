@@ -26,6 +26,9 @@ define "canvas-test-presenter", () ->
       
         
     populateTests: (tests) =>
+      _.each tests, (test, index) ->
+        tests[index].name ||= test.description.replace(/\s/g, "_")
+
       @view.populateTests tests
 
     applyBindings: () =>

@@ -3,11 +3,16 @@
   <head>
   <meta name = "viewport" content = "width = device-width" />
   <script type="text/javascript" src="module.js"></script>
-  <!--<script type="text/javascript" src="severus2.js"></script>
-  <script type="text/javascript" src="underscore.js"></script>
-  <script type="text/javascript" src="nimble.js"></script>-->
+  <!--<script type="text/javascript" src="severus2.js"></script>-->
+  <script>
+    define("underscore", function () {return _})
+    define("jquery", function () {return $})
+    define("nimble", function () {return _})
+  </script>
+  <script type="text/javascript" src="nimble.js"></script>
   <script type="text/javascript" src="jquery.js"></script>
   <script type="text/javascript" src="underscore.js"></script>
+  <script type="text/javascript" src="drews-mixins.js"></script>
   <script type="text/javascript" src="backbone.js"></script>
   <script type="text/javascript" src="presenter.js"></script>
   <script type="text/javascript" src="canvas_test_view.js"></script>

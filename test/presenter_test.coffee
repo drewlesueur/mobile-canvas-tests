@@ -12,9 +12,17 @@ describe "presenter", ->
     
   it "should populateTests on the view", ->
     spyOn(app.view, "populateTests")
-    testsFixture = []
+    codeFunc = ->
+    testsFixture = [
+      description: "a cool test"
+      code: codeFunc
+    ]
     app.populateTests(testsFixture)
-    expect(app.view.populateTests).toHaveBeenCalledWith(testsFixture)
+    expect(app.view.populateTests).toHaveBeenCalledWith([
+      name: "a_cool_test"
+      description: "a cool test"
+      code: codeFunc
+    ])
 
   it "should listen for tests to be ran and run them", ->
     fakeTest =
